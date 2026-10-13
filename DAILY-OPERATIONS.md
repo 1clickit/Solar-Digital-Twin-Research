@@ -1,6 +1,6 @@
 # Daily Collection and Forensic Review
 
-**Important:** This is a description of the collector design and historically validated practices, **not a claim that every collector or daily job is currently online**. A fresh runtime/service comparison would be necessary for that claim.
+**Important:** This describes collector design and historically validated practices. A **bounded read-only check on 2026-10-13** confirmed that all five continuous collector services were running and their respective evidence directories had recent file modifications. It **did not** validate measurement contents, full capture cadence, live database schema or daily-job execution. CP-100 and camera acquisition remain intentionally offline for equipment protection; see [Collector inventory](COLLECTORS.md).
 
 ## Source-controlled collection policy
 

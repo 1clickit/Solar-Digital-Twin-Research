@@ -6,6 +6,8 @@ We have successfully used **two independent approaches** to extract useful diagn
 
 Both approaches reveal per-microinverter information unavailable in ordinary aggregate hybrid-inverter telemetry.
 
+**Current operating status (2026-10-13):** The CP-100 gateway and camera-based acquisition equipment are **intentionally offline because of equipment/camera risk**. This is a protective operator decision, **not** evidence of collector malfunction. Neither device nor its capture services were activated or tested in the October 13 runtime check. The results below describe completed historical acquisition only; resuming capture would require separate owner authorization and an equipment-safety review.
+
 ## 1. Historical SD-card acquisition
 
 A read-only forensic image of the CP-100 SD card was preserved and analyzed without changing the live gateway.

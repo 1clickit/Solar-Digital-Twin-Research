@@ -1,6 +1,6 @@
 # Collector Inventory and Functions
 
-**Status:** Source-code inventory, reviewed 2026-10-13. This document describes implemented code and historically demonstrated acquisition; it is **not a live service-health check**. No private endpoint, credential, device identifier, or raw record is published.
+**Status:** Source-code inventory reviewed 2026-10-13, supplemented by a limited owner-observed runtime check on the same date. No private endpoint, credential, device identifier, or raw measurement record is published.
 
 ## Acquisition sources
 
@@ -13,19 +13,35 @@
 | Direct JK BMS SSE collector (`collectors/jk_bms_sse.py`) | Collects per-battery information from BLE-to-ESPHome bridge | Pack voltage/current/power, cell extrema and imbalance, temperatures, health/cycles and protection/freshness states when available | Implemented and historically operated; separate transport from SolarAssistant for the **same physical BMSs**, not independent physical corroboration |
 | Weather METAR/SPECI collector (`collectors/kvbt_continuous.py`) | Retrieves regional weather observations for context | Wind, temperature, humidity, visibility, sky and weather reports, observation and retrieval time | Implemented and historically operated; off-site weather is not measured plane-of-array irradiance |
 
-### CP-100 evidence acquisition — demonstrated, not a continuous native feed
+## Limited runtime verification — 2026-10-13
+
+An owner-performed, read-only check on the running Solar Digital Twin Linux VM found **five continuous systemd services active/running**, with `Result=success`, and recent file modification activity in each corresponding evidence directory. These observations support current service availability and filesystem activity **at the time of inspection**, but not sensor-value validity, end-to-end data completeness or uninterrupted collection.
+
+| Continuous service | Latest observed file modification (CDT, 2026-10-13) |
+| --- | --- |
+| EG4 cloud | 16:33:23 |
+| ESP32/PZEM | 16:33:58 |
+| Direct JK BMS | 16:33:58 |
+| Regional weather | 16:08:29 |
+| SolarAssistant | 16:33:52 |
+
+The two-restart counts observed on the ESP32, JK and SolarAssistant services are compatible with their source-controlled one-day runtime limits and automatic restarts; the precise restart cause was **not** independently established. The EG4 setting-history function is part of the EG4 collection path, not a sixth continuously running service.
+
+The **installed software revision was identified locally**, but not matched to the reviewed private repository revision. Actual cadence, individual measurements, live SQLite definitions, raw-file completeness and scheduled daily-job execution were not independently validated during this bounded check.
+
+### CP-100 evidence acquisition — historical; intentionally offline
 
 | Method | Function | Status and limitation |
 | --- | --- | --- |
-| CP-100 SD-card forensic recovery and parser | Recover historical per-microinverter binary status dumps and gateway waveform records | Successfully demonstrated on a read-only image; retrospective, not live |
-| CP-100 Canon optical observer | Capture gateway screens and correlate individual channels, operating state, communication age and power with other sources | Successfully demonstrated over bounded observation periods; each display field may be older than the camera frame |
+| CP-100 SD-card forensic recovery and parser | Recover historical per-microinverter binary status dumps and gateway waveform records | Successfully demonstrated on a read-only image; retrospective; CP-100 currently intentionally offline |
+| CP-100 Canon optical observer | Capture gateway screens and correlate individual channels, operating state, communication age and power with other sources | Successfully demonstrated historically; camera acquisition intentionally offline to avoid equipment risk; displayed fields can be stale |
 | CP-100 native data stream | Ideally deliver individual status, event and waveform records directly to Solar Digital Twin | **Not implemented or verified**; a request for manufacturer/developer guidance |
 
 See [CP-100 data acquisition](CP100-CAPTURE-AND-DATA-ACCESS.md) for the actual results, timing limitations, and desired direct interface.
 
 ## Collection cadence and provenance
 
-The source-controlled launch policy specifies SolarAssistant polling at 10 seconds, EG4 sync at 5 minutes during a configured daytime window and 15 minutes otherwise, and a regional weather poll every 30 minutes. ESP32/PZEM and direct JK use streaming events rather than a universal periodic poll. The EG4 setting-history path is bounded to approximately daily retrieval. These are **configuration/code facts, not freshly measured uptime**; see [Daily operations](DAILY-OPERATIONS.md).
+The source-controlled launch policy specifies SolarAssistant polling at 10 seconds, EG4 sync at 5 minutes during a configured daytime window and 15 minutes otherwise, and a regional weather poll every 30 minutes. ESP32/PZEM and direct JK use streaming events rather than a universal periodic poll. The EG4 setting-history path is bounded to approximately daily retrieval. These are **source-controlled intended cadences**; the dated runtime check above confirms service state and file modifications, not actual per-source polling intervals or validated readings. See [Daily operations](DAILY-OPERATIONS.md).
 
 Each source has its own definition of observation time. Local receipt timestamps are **not** automatically equivalent to physical acquisition time. We preserve raw observations, missing-response intervals, freshness and timing qualification rather than replace absent values with zero.
 
