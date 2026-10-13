@@ -197,6 +197,67 @@ The research therefore separates expected control behavior, unexplained electric
 
 No particular internal inverter component has been demonstrated to be defective, and no single manufacturer has been established as the cause.
 
+## Technical Research Materials
+
+The linked documents present methods and engineering questions without exposing the operating installation or its raw datasets:
+
+- [Collector inventory and functions](COLLECTORS.md) — implemented acquisition paths, recorded fields, cadence, and limitations.
+- [Data architecture](DATA-ARCHITECTURE.md) — what the SQLite database and raw evidence streams contain, without database contents.
+- [Daily operations and evidence workflow](DAILY-OPERATIONS.md) — collection cadence, time bases, and event reconstruction.
+- [CP-100 data recovery and optical capture](CP100-CAPTURE-AND-DATA-ACCESS.md) — demonstrated results and the case for direct read-only access.
+- [Engineering and measurement gaps](ENGINEERING-GAPS.md) — artificial-grid waveform quality, excess-energy handling, and evidence needed.
+- [Publication manifest](PUBLICATION-MANIFEST.md) — the scope, provenance, and limits of the published code examples.
+
+The `src/` and `tests/` directories contain a **limited, previously reviewed reference-code subset** demonstrating acquisition timing and deterministic identifiers. They are not the complete operating collectors or a deployable installation.
+
+## An AI-Assisted Engineering Research Project
+
+Solar Digital Twin is an independent, owner-directed research effort developed with extensive assistance from artificial intelligence.
+
+The project owner has a background in IT infrastructure, systems integration, and technical troubleshooting, but is not a professional power-electronics designer or embedded-software developer.
+
+The investigation began with firsthand observations of electrical behavior that could not be adequately explained using conventional monitoring tools.
+
+Rather than attempting to diagnose the system through speculation or replacing components without understanding the underlying mechanism, the owner began working with AI assistants to develop a more systematic approach.
+
+### How AI Contributes
+
+AI assistants, including ChatGPT and Claude, have been used extensively for:
+
+- Researching electrical and electronic engineering concepts.
+- Developing software architecture, data collectors, and diagnostic tools.
+- Designing ESP32-based instrumentation and supporting firmware.
+- Analyzing CP-100 binary records and waveform data.
+- Developing camera-based diagnostic acquisition methods.
+- Designing databases and evidence-preservation methods.
+- Correlating observations from multiple independent data sources.
+- Constructing and evaluating competing engineering hypotheses.
+- Producing reproducible analysis software, tests, and technical documentation.
+
+The owner provides the physical equipment, real-world observations, operating knowledge, experimental objectives, and practical validation. AI provides assistance with research, programming, analysis, and the development of specialized tools.
+
+Technical decisions and physical-system operations remain under human direction.
+
+### Why This Approach Matters
+
+Many technically capable equipment owners encounter problems that are difficult to investigate without access to specialized engineering expertise, manufacturer documentation, or expensive laboratory instruments.
+
+AI-assisted development can significantly lower the barrier to creating useful diagnostic tools and conducting structured technical investigations.
+
+Our work with Solar Digital Twin illustrates this potential. Tools that would previously have been difficult for an individual to develop can now be designed, implemented, tested, and improved through collaboration between a technically experienced operator and AI systems.
+
+This does not eliminate the need for engineering expertise.
+
+AI-generated designs, software, measurements, and interpretations can contain errors. Observations must be validated, conclusions must remain proportional to the available evidence, and safety-critical questions require appropriate professional expertise and instrumentation.
+
+### An Invitation to Collaborate
+
+We are sharing this project not only to investigate an electrical problem, but also to demonstrate an emerging approach to independent technical research.
+
+We welcome contributions from electrical engineers, equipment manufacturers, software developers, researchers, and others who can challenge our assumptions, identify weaknesses in our methodology, or suggest more effective measurements.
+
+**The objective is not to demonstrate that AI can replace engineering expertise. It is to demonstrate how AI can help an individual ask better questions, construct better tools, and produce evidence that qualified engineers can meaningfully evaluate.**
+
 ## Where We Would Welcome Engineering Input
 
 This repository is intended to encourage constructive technical discussion among engineers, researchers, developers, and others familiar with distributed power systems.
