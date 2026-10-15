@@ -222,6 +222,8 @@ Rather than attempting to diagnose the system through speculation or replacing c
 
 ### How AI Contributes
 
+See the separate [October 2026 AI collaboration discussion](review-2026-10/) for an independent review of the engineering workflow.
+
 AI assistants, including ChatGPT and Claude, have been used extensively for:
 
 - Researching electrical and electronic engineering concepts.
