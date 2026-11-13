@@ -192,9 +192,9 @@ Independent testing has confirmed two distinct behaviors:
 
 These are separate event classes. The expected top-of-charge cutoff must not be treated as evidence that the Smart Port remains energized during normal cutoff, nor should unexplained microinverter shutdowns be attributed to relay opening without direct supporting evidence.
 
-These remain unresolved.
+The initiating mechanism for the below-cutoff microinverter shutdowns remains unresolved.
 
-Available measurements have helped distinguish some real production reductions from instrumentation failures, but do not yet explain every initiating mechanism.
+Available measurements have helped distinguish real offline events from instrumentation failures, but do not yet explain every initiating mechanism.
 
 The research therefore separates expected control behavior, unexplained electrical events, environmental effects, and monitoring limitations.
 
