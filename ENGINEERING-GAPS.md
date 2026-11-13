@@ -4,7 +4,7 @@ This project invites independent engineering analysis rather than presupposing a
 
 ## 1. Artificial-grid power quality (highest priority)
 
-The hybrid inverter forms the 120/240 V AC reference during off-grid operation. Current ESP32/PZEM instrumentation retains useful one-leg RMS voltage, current, frequency and power-factor information, but **cannot establish**:
+The off-grid inverter forms the 120/240 V AC reference during off-grid operation. Current ESP32/PZEM instrumentation retains useful one-leg RMS voltage, current, frequency and power-factor information, but **cannot establish**:
 
 - The shape and THD of both AC waveforms under changing conditions.
 - Fast voltage/current switching transients, high-frequency conducted noise or phase discontinuities.

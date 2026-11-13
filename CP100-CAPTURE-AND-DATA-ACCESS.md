@@ -4,7 +4,7 @@
 
 We have successfully used **two independent approaches** to extract useful diagnostic information from a Chilicon CP-100 gateway: forensic recovery from an SD-card image and a Canon-camera optical observer of the live CP-100 diagnostic display. These are **historical, demonstrated methods**, not a claim of continuous native CP-100 telemetry.
 
-Both approaches reveal per-microinverter information unavailable in ordinary aggregate hybrid-inverter telemetry.
+Both approaches reveal per-microinverter information unavailable in ordinary aggregate inverter telemetry.
 
 **Current operating status (2026-10-13):** The CP-100 gateway and camera-based acquisition equipment are **intentionally offline because of equipment/camera risk**. This is a protective operator decision, **not** evidence of collector malfunction. Neither device nor its capture services were activated or tested in the October 13 runtime check. The results below describe completed historical acquisition only; resuming capture would require separate owner authorization and an equipment-safety review.
 

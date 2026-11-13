@@ -1,14 +1,14 @@
 # Solar Digital Twin Research
 
-**Independent research into hybrid inverter behavior, AC-coupled solar generation, power electronics, and electrical system stability.**
+**Independent research into off-grid inverter behavior, AC-coupled solar generation, power electronics, and electrical system stability.**
 
 **Status:** Active research and investigation
 
 ## Why This Project Exists
 
-Solar Digital Twin was created to investigate recurring electrical and solar-production anomalies in a residential, off-grid-capable solar energy system.
+Solar Digital Twin was created to investigate recurring electrical and solar-production anomalies in a residential off-grid solar energy system.
 
-The system combines a hybrid, grid-forming inverter, AC-coupled photovoltaic microinverters, lithium battery storage, and utility backup power.
+The system combines an off-grid, grid-forming inverter, AC-coupled photovoltaic microinverters, lithium battery storage, and utility backup power.
 
 Although the installation can operate normally for extended periods, it has exhibited unexplained solar-production interruptions, frequency-related behavior, and other electrical anomalies.
 
@@ -24,7 +24,7 @@ The representative installation consists of:
 
 | Component | Configuration |
 |---|---|
-| Hybrid inverter | EG4 12000XP V1, split-phase 120/240 V |
+| Off-grid inverter | EG4 12000XP V1, split-phase 120/240 V |
 | Previous inverter equipment | Two EG4 6000XP units |
 | Solar generation | 12 photovoltaic modules, approximately 5.37 kW DC nameplate |
 | AC-coupled generation | Six Chilicon CP-720 microinverters |
@@ -41,7 +41,7 @@ This is a simplified engineering configuration, not a complete wiring diagram. I
 
 ## A Curious Pattern: Extended Improvement Following Inverter Replacement
 
-One of our more interesting observations concerns the effect of replacing the hybrid inverter.
+One of our more interesting observations concerns the effect of replacing the inverter.
 
 The installation previously used two 6000XP units and was subsequently upgraded to a 12000XP, partly to determine whether a different inverter design would eliminate the observed behavior.
 
@@ -65,7 +65,7 @@ A major research question concerns what happens inside a grid-forming inverter w
 
 Consider a system producing several kilowatts of solar power while charging batteries and supporting household loads.
 
-When the battery reaches a configured charging limit, the hybrid inverter may initiate a sequence intended to reduce or stop AC-coupled generation.
+When the battery reaches a configured charging limit, the inverter may initiate a sequence intended to reduce or stop AC-coupled generation.
 
 However, the microinverters may continue producing for some interval before responding to changed electrical conditions or losing their AC reference.
 
@@ -91,7 +91,7 @@ Understanding these details may help distinguish expected operating behavior fro
 
 ## A Major Measurement Gap: The Quality of the Artificial Grid
 
-One of the most important unanswered questions concerns the **quality of the artificial AC grid created by the hybrid inverter**.
+One of the most important unanswered questions concerns the **quality of the artificial AC grid created by the off-grid inverter**.
 
 In off-grid operation, the inverter is responsible for establishing the voltage and frequency reference used by connected equipment, including the AC-coupled microinverters.
 
@@ -164,7 +164,7 @@ What independent observations would distinguish genuine electrical events from m
 Solar Digital Twin is an independent diagnostic platform that combines information from multiple sources:
 
 - SolarAssistant operating and historical data.
-- Hybrid inverter state and configuration telemetry.
+- Inverter state and configuration telemetry.
 - Direct battery-management-system observations.
 - ESP32/PZEM electrical measurements.
 - Available weather and environmental information.

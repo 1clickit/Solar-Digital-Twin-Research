@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Provide manufacturer-neutral context and reproducible technical methods for investigating hybrid-inverter AC-coupling behavior, transient energy handling, per-microinverter state, and artificial-grid power quality. Describe the human-directed, AI-assisted engineering approach.
+Provide manufacturer-neutral context and reproducible technical methods for investigating off-grid-inverter AC-coupling behavior, transient energy handling, per-microinverter state, and artificial-grid power quality. Describe the human-directed, AI-assisted engineering approach.
 
 ## Published content
 
