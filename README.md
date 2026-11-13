@@ -185,9 +185,12 @@ This helps reconstruct events without assuming that every source reports the sam
 
 Our investigations indicate that visually similar solar-production interruptions can represent different events.
 
-Some shutdown and restart cycles are strongly consistent with configured battery-voltage-based AC-coupling control.
+Independent testing has confirmed two distinct behaviors:
 
-Other large production reductions have occurred below the expected shutdown threshold, without corresponding inverter control-state changes.
+- **Normal upper-voltage cutoff:** On reaching the configured upper battery-voltage threshold, the EG4 12000XP V1 de-energizes the Smart Port, disconnecting AC-coupled microinverters as designed. Earlier interpretations suggesting that the port remained energized at the top-of-charge cutoff were incorrect. The electrical observation supports port de-energization; physical relay-contact position was not directly instrumented.
+- **Unexplained shutdowns below cutoff:** At battery voltages below that threshold, the Chilicon CP-720 microinverters can go offline within approximately 1–2 seconds while independent one-leg measurements still show the Smart Port energized at approximately 120 V, with observed frequency around 59.8–60.1 Hz. The microinverters reconnect and resume production in stages over several minutes. Ordinary RMS measurements cannot rule out faster disturbances between samples.
+
+These are separate event classes. The expected top-of-charge cutoff must not be treated as evidence that the Smart Port remains energized during normal cutoff, nor should unexplained microinverter shutdowns be attributed to relay opening without direct supporting evidence.
 
 These remain unresolved.
 
